@@ -114,26 +114,26 @@ void RK_sol::RK_solve()
 		calcuate_coefficient(equ_ans, k1);
 		
 		copy_vector(k, k1, element_num);
-		constant_multiply_vector(step_time / 2, k, element_num);
+		constant_multiply_vector(1 / 2, k, element_num);
 		vector_plus_vector(element_density, k, element_num);
 		calcuate_electron();
 		calcuate_coefficient(equ_ans, k2);
 
 		copy_vector(k, k2, element_num);
-		constant_multiply_vector(step_time / 2, k, element_num);
+		constant_multiply_vector(1 / 2, k, element_num);
 		vector_plus_vector(element_density, k, element_num);
 		calcuate_electron();
 		calcuate_coefficient(equ_ans, k3);
 
 		copy_vector(k, k3, element_num);
-		constant_multiply_vector(step_time, k, element_num);
+		constant_multiply_vector(1, k, element_num);
 		vector_plus_vector(element_density, k, element_num);
 		calcuate_electron();
 		calcuate_coefficient(equ_ans, k4);
 
 		for (int i = 1; i < element_num; i++)
 		{
-			*(element_density + i) = *(density_before + i) + step_time / 6 * *(k1 + i) + step_time / 3 * *(k2 + i) + step_time / 3 * *(k3 + i) + step_time / 6 * *(k4 + i);
+			*(element_density + i) = *(density_before + i) + 1 / 6 * *(k1 + i) + 1 / 3 * *(k2 + i) + 1 / 3 * *(k3 + i) + 1 / 6 * *(k4 + i);
 			//cout << *(element_density + i) << " ";
 		}
 		//cout << endl;
