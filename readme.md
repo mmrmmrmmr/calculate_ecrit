@@ -8,7 +8,7 @@ calculate_ecrit
 |——my_sim.h  
 |——main.cpp  
 |——path.txt  
-|——floder  
+|——folder  
 |——|——ans.txt  
 |——|——chen.txt  
 |——|——den.txt  
@@ -26,7 +26,7 @@ calculate_ecrit
 为仿真配置文件的储存地址
 
 ## 仿真使用方法
-* 首先修改配置文件，在自定的文件夹floder下进行设置，也可使用set.py进行辅助设置
+* 首先修改配置文件，在自定的文件夹folder下进行设置，也可使用set.py进行辅助设置
 * 修改path路径，之后直接运行主程序main.cpp，以生成在对应路径下的结果ans.txt
 * 运行draw.py，进行仿真结果的绘制
 
