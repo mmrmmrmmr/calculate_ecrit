@@ -21,7 +21,7 @@ double* create_vector_double(int element_num)
 {
 	double* vector = (double*)malloc(element_num * sizeof(double));
 	if (vector == nullptr) {
-		cout << "ÄÚ´æ·ÖÅäÊ§°Ü" << endl;
+		cout << "error" << endl;
 	}
 	else
 	{
@@ -37,8 +37,9 @@ double* create_vector_double(int element_num)
 int* create_vector_int(int element_num)
 {
 	int* vector = (int*)malloc(element_num * sizeof(int));
+	// cout << element_num << endl;
 	if (vector == nullptr) {
-		cout << "ÄÚ´æ·ÖÅäÊ§°Ü" << endl;
+		cout << "error" << endl;
 	}
 	else
 	{
@@ -56,7 +57,7 @@ chemical_equation* create_chemical_equation(int equation_num)
 	chemical_equation* struct_vector = (chemical_equation*)malloc(equation_num * sizeof(chemical_equation));
 	if (struct_vector == nullptr)
 	{
-		cout << "ÄÚ´æ·ÖÅäÊ§°Ü" << endl;
+		cout << "error" << endl;
 	}
 	//else
 	//{
@@ -75,7 +76,7 @@ element_equation* create_element_equation(int element_num)
 	element_equation* struct_vector = (element_equation*)malloc(element_num * sizeof(element_equation));
 	if (struct_vector == nullptr)
 	{
-		cout << "ÄÚ´æ·ÖÅäÊ§°Ü" << endl;
+		cout << "error" << endl;
 	}
 	//else
 	//{
@@ -93,7 +94,7 @@ double** create_matrix(int line_num, int colume_num=1)
 {
 	double** matrix = (double**)malloc(line_num * sizeof(double*));
 	if (matrix == nullptr) {
-		cout << "ÄÚ´æ·ÖÅäÊ§°Ü" << endl;
+		cout << "error" << endl;
 	}
 	else
 	{
@@ -101,7 +102,7 @@ double** create_matrix(int line_num, int colume_num=1)
 		{
 			*(matrix+i) = (double*)malloc(colume_num * sizeof(double));
 			if (*(matrix + i) == nullptr) {
-				cout << "ÄÚ´æ·ÖÅäÊ§°Ü" << endl;
+				cout << "error" << endl;
 			}
 			else
 			{
@@ -122,7 +123,7 @@ void init_vector_double(double* vector, int element_num, string path)
 	{
 		infile >> element;
 		*(vector + i) = element;
-		//cout << *(vector + i);
+		// cout << *(vector + i);
 	}
 	return;
 }
@@ -153,6 +154,7 @@ void init_chemical_equation(chemical_equation* vector, int equation_num, string 
 		(vector + i)->k = k;
 		infile >> x;
 		(vector + i)->element_num = x;
+		// cout << x << endl;
 		(vector + i)->element = create_vector_int(x);
 		(vector + i)->coefficient = create_vector_int(x);
 		for (int j = 0; j < (vector + i)->element_num; j++)
@@ -191,7 +193,7 @@ void init_element_equation(element_equation* vector, int element_num, string pat
 double my_power(double x, double a)
 {
 	double ans = 1;
-	for (int i = 0; i < a; i++)
+	for (int i = 1; i < a; i++)
 	{
 		ans *= x;
 	}
