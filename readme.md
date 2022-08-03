@@ -33,7 +33,7 @@ calculate_ecrit
 ## 所需依赖配置
 需g++或其他编译器对cpp进行编译  
 需python3，以及相关依赖matlibplot，numpy  
-如需使用vscode运行，需删除.vscode文件夹下的setting.json与tasks.json，需要加载扩展code runner，python，c/c++
+如需使用vscode运行，需添加.vscode文件夹下的launch.json，需要加载扩展code runner，python，c/c++
 
 ## 配置文件配置方法
 推荐使用配置文件工具set.py进行设置  
